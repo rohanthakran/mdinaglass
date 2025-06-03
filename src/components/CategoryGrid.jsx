@@ -3,33 +3,30 @@
 import React from "react";
 
 const categories = [
-  { name: "Lanterns", image: "lanterns.png" },
-  { name: "Vases", image: "jwell-1.jpg" },
-  { name: "Lighting", image: "lighting.jpg" },
-  { name: "Decorative Bowls", image: "jwell-2.jpg" },
-  { name: "Egg Holders", image: "egg-holder.jpg" },
-  { name: "Book Ends", image: "lanterns.png" },
-  { name: "Oil & Vinegar", image: "sculpture.png" },
-  { name: "Pestle & Mortar", image: "lighting.jpg" },
-  { name: "Bubble Candle Holders", image: "lighting.jpg" },
-  { name: "Sculptures", image: "vases.png" },
-  { name: "Christmas", image: "lanterns.png" },
-  { name: "Valentine's", image: "lanterns.png" },
+  { name: "Lanterns", image: "image1.png" },
+  { name: "Vases", image: "vases.png" },
+  { name: "Lighting", image: "octopus.png" },
+  { name: "Decorative Bowls", image: "Bowls.png" },
+  { name: "Egg Holders", image: "egg.png" },
+  { name: "Book Ends", image: "book.png" },
+  { name: "Oil & Vinegar", image: "oil.png" },
+  { name: "Pestle & Mortar", image: "pestle.png" },
+  { name: "Bubble Candle Holders", image: "bubble.png" },
+  { name: "Sculptures", image: "Sculptures.png" },
+  { name: "Christmas", image: "christmas.png" },
+  { name: "Valentine's", image: "valentine.png" },
 ];
 
 const CategoryGrid = () => {
   return (
-    <section className="container py-5">
-      <h3
-        className="fw-semibold mb-4"
-        style={{ fontFamily: "Quicksand, sans-serif" }}
-      >
+    <section className=" custom-categories bg-white container py-5">
+      <h3 className=" mb-4" style={{ fontFamily: "dopamine, sans-serif" }}>
         Explore our categories
       </h3>
       <div className="row g-4">
         {categories.map((cat) => (
           <div className="col-6 col-sm-4 col-md-3" key={cat.name}>
-            <div className="card shadow-sm border rounded-3">
+            <div className="card category-card shadow-sm border rounded-3">
               <div
                 className="position-relative border-bottom"
                 style={{
@@ -49,10 +46,10 @@ const CategoryGrid = () => {
                   }}
                 />
                 <div
-                  className="position-absolute top-50 start-50 translate-middle text-white fw-semibold text-center px-2"
+                  className="font-custom-category position-absolute bottom-5 start-50 translate-middle text-white  text-center px-2"
                   style={{
                     textShadow: "1px 1px 6px rgba(0,0,0,0.7)",
-                    fontSize: "1.1rem",
+
                     width: "100%",
                   }}
                 >

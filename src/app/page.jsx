@@ -12,8 +12,16 @@ export default function Page() {
   return (
     <>
       <Header />
-      <CategoryFeature />
-      <section className="py-5 bg-light text-center">
+      <section
+        style={{
+          backgroundColor: "#F1F1F1",
+        }}
+      >
+        <div className="container">
+          <CategoryFeature />
+        </div>
+      </section>
+      <section className="py-5 bg-white text-center">
         <div className="container">
           <CategoryGrid />
         </div>

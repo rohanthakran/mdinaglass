@@ -93,80 +93,148 @@ const Header = () => {
       </nav>
 
       {/* Logo + Search + Currency + Signup */}
-      <div className="container py-3 d-flex flex-column flex-md-row align-items-center justify-content-between">
-        {/* Logo */}
-        <div className="mb-3 mb-md-0">
-          <img
-            src="assets/logo.png"
-            alt="Mdina Glass Logo"
-            style={{ height: "93px", width: "231px" }}
-          />
-        </div>
 
-        {/* Search Field */}
-        <div className="inputContainer">
-          <div>
-            <button
-              className="btn btn-outline-secondary"
-              type="button"
-              style={{
-                border: "none",
-              }}
-            >
-              <IoIosSearch />
-            </button>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search all Categories"
+      <div
+        style={{
+          display: "flex",
+        }}
+      >
+        <div
+          className="container py-3 d-flex flex-column flex-md-row align-items-center justify-content-between"
+          style={{
+            maxWidth: "1700px !important",
+          }}
+        >
+          {/* Logo */}
+          <div className="mb-3 mb-md-0">
+            <img
+              src="assets/logo.png"
+              alt="Mdina Glass Logo"
+              style={{ height: "90px", width: "229px" }}
             />
           </div>
-        </div>
 
-        {/* Currency & Sign Up */}
+          {/* Search Field */}
+          <div style={{ display: "flex" }}>
+            <div className="inputContainer">
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                style={{
+                  border: "none",
+                  paddingRight: "0px",
+                }}
+              >
+                <IoIosSearch size={27} />
+              </button>
+              <input
+                type="text"
+                // className="form-control"
+                placeholder="Search"
+                className="inputSubContainer"
+              />
+            </div>
 
-        <div className="d-flex align-items-center justify-content-center justify-content-md-end">
-          <div className="d-flex align-items-center me-3">
-            <Bell
-              className="text-muted me-3"
-              style={{ width: "20px", height: "20px" }}
-            />
-            <ShoppingCart
-              className="text-muted me-2"
-              style={{ width: "20px", height: "20px" }}
-            />
-            <User
-              className="text-muted me-3"
-              style={{ width: "20px", height: "20px" }}
-            />
+            {/* Currency & Sign Up */}
+
+            <div style={{ display: "flex" }}>
+              <div className="d-flex align-items-center justify-content-center justify-content-md-end">
+                <div className="d-flex align-items-center me-3">
+                  <Bell
+                    className="text-muted me-3"
+                    color="#888888"
+                    style={{
+                      width: "22px",
+                      height: "22px",
+                      margin: "10px",
+                      marginLeft: "36px",
+                    }}
+                  />
+                  <ShoppingCart
+                    color="#888888"
+                    className="text-muted me-2"
+                    style={{ width: "22px", height: "22px", margin: "10px" }}
+                  />
+                  <User
+                    color="#888888"
+                    className="text-muted me-3"
+                    style={{ width: "22px", height: "22px", margin: "10px" }}
+                  />
+                </div>
+              </div>
+
+              <div className="d-flex align-items-center justify-content-center justify-content-md-end">
+                <div
+                  style={{
+                    border: "1.2px solid #005E84",
+                    // borderRadius: "5px",
+                    // padding: "5px",
+                    display: "flex",
+                    alignItems: "center",
+                    marginRight: "5px",
+                  }}
+                >
+                  <div
+                    style={{
+                      backgroundColor: "#005E84",
+                      height: "44px",
+                      width: "33px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img
+                      src="assets/flag.png"
+                      alt="Mdina Glass Logo"
+                      style={{ height: "22px", width: "22px" }}
+                    />
+                  </div>
+
+                  <select
+                    className="form-select me-2 searchContainer"
+                    style={{
+                      width: "80px",
+                      height: "46px",
+                      border: "none",
+                      fontFamily: "'Quicksand', sans-serif",
+                      color: "#005E84",
+                      paddingLeft: "5px",
+                      fontSize: "18px",
+                    }}
+                  >
+                    <option>EUR</option>
+                    <option>USD</option>
+                    <option>GBP</option>
+                  </select>
+                </div>
+
+                <button
+                  className="signUp btn "
+                  style={{
+                    fontFamily: "'Quicksand', sans-serif",
+                    backgroundColor: "#005e84",
+                    color: "#fff",
+                    width: "105px",
+                    height: "46px",
+                  }}
+                >
+                  SIGN UP
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className="d-flex align-items-center">
-          <select
-            className="form-select me-2 searchContainer"
-            style={{ width: "80px" }}
-          >
-            <option>EUR</option>
-            <option>USD</option>
-            <option>GBP</option>
-          </select>
-          <button
-            className="signUp btn "
-            style={{
-              fontFamily: "'Quicksand', sans-serif",
-              backgroundColor: "#005e84",
-              color: "#fff",
-            }}
-          >
-            SIGN UP
-          </button>
         </div>
       </div>
 
       {/* Category Navigation */}
-      <div className="category-nav border-top border-bottom py-2">
-        <div className="container SubnavContainer">
+      <div className="category-nav  border-bottom py-2">
+        <div
+          className="container SubnavContainer"
+          style={{
+            maxWidth: "1790px  !important",
+          }}
+        >
           <div className="d-flex justify-content-center flex-wrap">
             {[
               "Glass Blowing & Sculpting",
@@ -178,8 +246,9 @@ const Header = () => {
               "Legacy (Book)",
               "Gift Vouchers",
               "Sale",
+              "Shop by Ranges",
             ].map((cat) => (
-              <a key={cat} href="#" className="nav-link mx-2 px-2">
+              <a key={cat} href="#" className="nav-link px-2">
                 {cat}
               </a>
             ))}
@@ -212,7 +281,7 @@ const Header = () => {
           <video
             ref={videoRef}
             className="w-100"
-            style={{ maxHeight: "500px", objectFit: "cover" }}
+            style={{ maxHeight: "717px", objectFit: "cover" }}
             src={current.src}
             muted
             loop

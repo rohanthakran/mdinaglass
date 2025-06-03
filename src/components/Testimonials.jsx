@@ -36,28 +36,37 @@ const Testimonials = () => {
         rel="stylesheet"
       />
 
-      <section className="bg-white py-5">
+      <section className="testimonials-section bg-white py-5">
         <div className="container text-center">
           <h3 className="mb-4">Loved by Our Customers</h3>
           <div className="row">
             {testimonials.map((t) => (
               <div className="col-12 col-sm-6 col-md-3 mb-4" key={t.name}>
-                <div className="card h-100 shadow-sm">
-                  <div className="bg-light card-body d-flex flex-column justify-content-between">
+                <div className="h-100">
+                  <div className="bg-light testimonials card-body d-flex flex-column justify-content-between">
                     <div>
-                      <img
-                        src="/assets/quote-icon.png"
-                        alt="Quote icon"
-                        className="mb-2"
-                        style={{ width: "100px", height: "100px" }}
-                      />
-                      <p>{t.quote}</p>
+                      <div className="quoteimg">
+                        <img
+                          src="/assets/quote.png"
+                          alt="Quote icon"
+                          className="mb-2 "
+                          style={{ width: "auto", height: "auto" }}
+                        />
+                      </div>
+                      <h5>Loved by Our Customers</h5>
+                      <p className="review-sec">{t.quote}</p>
                     </div>
                     <div className="mt-4">
                       <p className="mb-1">
                         <strong>{t.name}</strong> / <em>{t.city}</em>
                       </p>
-                      <p className="text-warning mb-0">⭐⭐⭐⭐⭐</p>
+                      <p className="text-warning border-0 mb-0">
+                        {" "}
+                        <img
+                          src="/assets/review.png"
+                          style={{ width: "auto", height: "auto" }}
+                        />
+                      </p>
                     </div>
                   </div>
                 </div>

@@ -1,3 +1,13 @@
+@media (min-width: 1800px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1720px !important;
+  }
+}
 .banner {
   background: #76d2d3;
   padding-bottom: 25px;
@@ -34,7 +44,26 @@
   flex-direction: row;
   border: 1px solid #dcdcdc;
   border-radius: 50px;
-  width: 500px;
+  width: 879px;
+  height: 64px;
+  background-color: #f1f1f1;
+
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.inputSubContainer {
+  font-size: 18px;
+  font-family: var(--font-quicksand);
+  text-transform: uppercase;
+  color: #888;
+  background-color: #f1f1f1;
+  border: none;
+  border-left: none;
+  border-radius: no;
+  width: 695px;
+  height: 40px;
+  margin-top: 10px;
+  padding: 10px;
+  box-shadow: none;
 }
 .searchContainer option select {
   font-family: var(--font-quicksand);
@@ -50,20 +79,183 @@
 
 .SubnavContainer a {
   font-family: var(--font-quicksand);
-  color: #444444;
-  font-size: 16px;
+  color: #888888;
+  font-size: 21px;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+  margin-right: 1.18rem;
+}
+.SubnavContainer a:active {
+  color: #444444 !important;
 }
 .imageText {
-  font-family: var(--font-domine);
-  color: #ffffff;
-  font-size: 30px;
+  font-family: var(--font-domine) !important;
+  color: #ffffff !important;
+  font-size: 48px !important;
   font-weight: 400;
   position: absolute;
-  top: 15%;
-  left: 12%;
+  top: 18%;
+  left: 11.5%;
 
   /* padding-top: 1rem;
   padding-bottom: 1rem; */
+}
+.CatergorySection {
+  background-color: "#F1F1F1" !important;
+  display: "flex";
+  flex-direction: "row";
+  align-items: "center";
+  justify-content: "center";
+}
+.theImage {
+  height: 100%;
+  width: 835px !important;
+}
+select option {
+  font-family: var(--font-quicksand);
+  color: #444444;
+  font-size: 15px;
+}
+
+/* Custom css*/
+
+@media (min-width: 1800px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1720px !important;
+  }
+}
+
+.font-custom-category {
+  font-size: 32px !important;
+  font-weight: 300 !important;
+}
+h3 {
+  font-weight: 300 !important;
+  color: #666666 !important;
+  font-size: 45px !important;
+  font-family: var(--font-domine) !important;
+}
+
+.custom-categories h3 {
+  text-align: left;
+  margin-bottom: 40px !important;
+}
+
+.bottom-5 {
+  bottom: 5% !important;
+}
+
+.bg-light {
+  background-color: #fff !important;
+}
+
+.new-arrival-design p {
+  font-size: 18px;
+  color: #888888 !important;
+  font-family: var(--font-quicksand);
+  margin-bottom: 10px !important;
+}
+
+.new-arrival-design h6 {
+  font-size: 22px !important;
+  font-family: var(--font-quicksand);
+  color: #444444 !important;
+  margin-bottom: 12px !important;
+}
+
+.new-arrival-design {
+  margin: 0px 10px !important;
+}
+
+.new-arrival-design button {
+  border: 2px solid #d9d9d9 !important;
+  padding: 10px !important;
+  margin-top: 7px !important;
+}
+
+.new-arrival-design button {
+  border: 2px solid #d9d9d9 !important;
+  margin-top: 7px !important;
+  padding: 12px !important;
+  border-radius: 0 !important;
+}
+section.testimonials-section {
+  padding: 80px !important;
+}
+section.testimonials-section h3 {
+  text-align: left;
+  margin-bottom: 30px !important;
+}
+
+.testimonials p {
+  color: #888888 !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  font-family: var(--font-quicksand) !important;
+}
+
+.bg-light.testimonials {
+  background: #f1f1f1 !important;
+  padding: 30px;
+  border: none !important;
+}
+
+.slick-next {
+  right: 0px !important;
+}
+
+.testimonials h5 {
+  margin-top: 10px;
+  font-family: var(--font-quicksand) !important;
+  font-size: 26px !important;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #444444;
+}
+
+.quoteimg {
+  background: #fff;
+  border-radius: 100%;
+  text-align: center;
+  width: 110px !important;
+  height: 110px !important;
+  margin-left: auto;
+  padding-top: 30px;
+  margin-right: auto;
+}
+
+p.review-sec {
+  min-height: 80px;
+}
+p.font-footer {
+  font-size: 22px;
+  font-weight: 300;
+  color: #444444;
+  font-family: var(--font-domine) !important;
+}
+
+h6.footer-link {
+  font-size: 24px;
+  font-weight: 400;
+  color: #444444;
+  font-family: var(--font-domine) !important;
+}
+.bestseller-account {
+  margin: 0px 10px;
+}
+ul.list-unstyled li {
+  font-size: 16px;
+  color: #888888;
+  line-height: 28px;
+  font-family: var(--font-quicksand) !important;
+}
+section.feature-images {
+  padding: 40px;
+  background: #f1f1f1;
 }

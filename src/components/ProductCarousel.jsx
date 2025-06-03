@@ -11,26 +11,26 @@ const ProductCarousel = ({ title = "New Arrivals", showBadge = false }) => {
       id: 1,
       name: "Bubble Small Table Lamp",
       price: 65.0,
-      image: "/assets/lanterns.png",
+      image: "/assets/lamp.png",
       quickView: "Quick View",
     },
     {
       id: 2,
       name: "Necklace & Bracelet",
       price: 35.5,
-      image: "/assets/jwell-1.jpg",
+      image: "/assets/clone.png",
     },
     {
       id: 3,
       name: "Bauble with Angel",
       price: 9.0,
-      image: "/assets/lighting.jpg",
+      image: "/assets/lamp.png",
     },
     {
       id: 4,
       name: "Mini Double Swirl Vase",
       price: 25.0,
-      image: "/assets/vases.png",
+      image: "/assets/clone.png",
     },
   ];
 
@@ -48,34 +48,27 @@ const ProductCarousel = ({ title = "New Arrivals", showBadge = false }) => {
   };
 
   return (
-    <div className="py-5" style={{ backgroundColor: "#f5f5f5" }}>
+    <div className="py-5" style={{ backgroundColor: "#f5f5f5", margin: "0px" }}>
       <div className="container">
         <h3
-          className="fw-semibold mb-4"
-          style={{ fontFamily: "Quicksand, sans-serif" }}
+          className="ms-3 mb-4"
+          style={{ fontFamily: "Quicksand, sans-serif", margin: 0 }}
         >
           {title}
         </h3>
-        <p>
-          We produce lots and lots of wonderful handmade glassware, from perfume
-          bottles, vases, bowls and sculptures to table and kitchen accessories,
-          clocks, lighting, lanterns, scented candleholders and much, much more.
-          These popular items might help you find your way to something that
-          appeals to you.
-        </p>
 
         <Slider {...settings}>
           {products.map((product) => (
             <div key={product.id} className="px-2">
               <div
-                className="bg-white text-center border rounded shadow-sm p-3 d-flex flex-column justify-content-between"
+                className="bg-white text-center new-arrival-design  p-3 d-flex flex-column justify-content-between"
                 style={{ height: "100%", minHeight: "340px" }}
               >
                 <img
                   src={product.image}
                   alt={product.name}
                   className="img-fluid mb-2"
-                  style={{ height: "180px", objectFit: "contain" }}
+                  style={{ height: "270px", objectFit: "contain" }}
                 />
 
                 {/* Always reserve space for Quick View */}
@@ -109,16 +102,27 @@ const ProductCarousel = ({ title = "New Arrivals", showBadge = false }) => {
       {/* Carousel Arrow Styling */}
       <style>
         {`
-          .slick-prev, .slick-next {
-            width: 30px;
-            height: 30px;
-            z-index: 1;
-          }
-          .slick-prev:before, .slick-next:before {
-            color: #007bff;
-            font-size: 30px;
-          }
-        `}
+    .slick-prev, .slick-next {
+      width: 30px;
+      height: 30px;
+      z-index: 2;
+    }
+
+    .slick-prev:before, .slick-next:before {
+      color: #005E84;
+      font-size: 60px;
+      opacity: 1;
+    }
+
+    /* Optional: position the arrows better */
+    .slick-prev {
+      left: -10px;
+    }
+
+    .slick-next {
+      right: 70px;
+    }
+  `}
       </style>
     </div>
   );

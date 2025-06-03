@@ -4,19 +4,19 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: "rgb(245, 245, 245)" }}>
+    <footer style={{ backgroundColor: "#F1F1F1" }}>
       {/* Top Footer */}
-      <div className="container pt-5 pb-4 border-top">
+      <div className="container footer-area pt-5 pb-4 border-top">
         <div className="row">
           {/* Logo & Payment */}
           <div className="col-md-4 mb-4">
             <img
-              src="/assets/logo.png"
+              src="/assets/footer-logo.png"
               alt="Mdina Glass Logo"
               className="mb-3"
-              style={{ width: "150px" }}
+              style={{ width: "250px" }}
             />
-            <p className="fw-semibold">Payment Method</p>
+            <p className="font-footer">Payment Method</p>
             <div className="d-flex flex-wrap gap-2">
               <img src="/assets/visa.png" alt="Visa" height="30" />
             </div>
@@ -24,7 +24,7 @@ const Footer = () => {
 
           {/* Links */}
           <div className="col-md-2 mb-4">
-            <h6 className="fw-semibold">Links</h6>
+            <h6 className="footer-link">Links</h6>
             <ul className="list-unstyled small">
               <li>Home</li>
               <li>About Us</li>
@@ -37,7 +37,7 @@ const Footer = () => {
 
           {/* Information */}
           <div className="col-md-3 mb-4">
-            <h6 className="fw-semibold">Information</h6>
+            <h6 className="footer-link">Information</h6>
             <ul className="list-unstyled small">
               <li>Careers</li>
               <li>International Delivery</li>
@@ -51,17 +51,17 @@ const Footer = () => {
 
           {/* Contact & Social */}
           <div className="col-md-3 mb-4">
-            <h6 className="fw-semibold">Contact</h6>
+            <h6 className="footer-link">Contact</h6>
             <ul className="list-unstyled small">
               <li>Store Locator & Contact</li>
               <li>Contact Form</li>
             </ul>
-            <h6 className="fw-semibold mt-3">Get Social</h6>
+            <h6 className="footer-link mt-3">Get Social</h6>
             <div className="d-flex gap-2 mb-2">
-              <img src="/assets/fb.png" alt="Facebook" height="30" />
-              <img src="/assets/insta.png" alt="Instagram" height="30" />
-              <img src="/assets/twitter.png" alt="Twitter" height="30" />
-              <img src="/assets/linkedin.png" alt="Linkedin" height="30" />
+              <img src="/assets/fb.png" alt="Facebook" height="40" />
+              <img src="/assets/insta.png" alt="Instagram" height="40" />
+              <img src="/assets/twitter.png" alt="Twitter" height="40" />
+              <img src="/assets/linkedin.png" alt="Linkedin" height="40" />
             </div>
             <div
               className="d-inline-flex align-items-center px-3 py-2 rounded mt-2"

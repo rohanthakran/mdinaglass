@@ -47,10 +47,10 @@ const ProductCard = ({ title = "New Arrivals" }) => {
   };
 
   return (
-    <div className="py-5 bg-white">
+    <div className=" py-5 bg-white bg-white-custom">
       <div className="container">
         <h3
-          className="fw-semibold mb-4"
+          className=" ms-3 mb-4"
           style={{ fontFamily: "Quicksand, sans-serif" }}
         >
           {title}
@@ -59,7 +59,7 @@ const ProductCard = ({ title = "New Arrivals" }) => {
           {products.map((product) => (
             <div key={product.id} className="px-2">
               <div
-                className="border rounded p-3 d-flex flex-column align-items-center"
+                className=" bestseller-account border rounded p-3 d-flex flex-column align-items-center"
                 style={{
                   height: "100%",
                   boxShadow: "0 2px 6px rgba(0,0,0,0.05)",
@@ -70,7 +70,7 @@ const ProductCard = ({ title = "New Arrivals" }) => {
                   className="bg-white rounded mb-3 d-flex align-items-center justify-content-center"
                   style={{
                     width: "100%",
-                    height: "180px",
+                    height: "250px",
                     overflow: "hidden",
                   }}
                 >
@@ -109,16 +109,30 @@ const ProductCard = ({ title = "New Arrivals" }) => {
       {/* Arrow Styling */}
       <style>
         {`
-          .slick-prev, .slick-next {
-            width: 30px;
-            height: 30px;
-            z-index: 1;
-          }
-          .slick-prev:before, .slick-next:before {
-            color: #007bff;
-            font-size: 30px;
-          }
-        `}
+        .slick-prev {
+  display: none !important;
+}
+    .slick-prev, .slick-next {
+      width: 30px;
+      height: 30px;
+      z-index: 2;
+    }
+
+    .slick-prev:before, .slick-next:before {
+      color: #005E84;
+      font-size: 60px;
+      opacity: 1;
+    }
+
+    /* Optional: position the arrows better */
+    .slick-prev {
+      left: -10px;
+    }
+
+    .slick-next {
+      right: 70px;
+    }
+  `}
       </style>
     </div>
   );
