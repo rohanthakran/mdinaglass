@@ -1,9 +1,25 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import "bootstrap/dist/css/bootstrap.min.css"; // ✅ Bootstrap CSS
+
+import { Geist, Geist_Mono, Quicksand, Domine } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"], // all the weights you want to use
+  display: "swap",
+  variable: "--font-quicksand", // optional: lets you use a CSS variable
+});
+
+const domine = Domine({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"], // all the weights you want to use
+  display: "swap",
+  variable: "--font-domine", // optional: lets you use a CSS variable
 });
 
 const geistMono = Geist_Mono({
@@ -19,7 +35,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable} ${domine.variable}`}
+      >
         {children}
       </body>
     </html>

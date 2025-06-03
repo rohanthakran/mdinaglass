@@ -1,0 +1,127 @@
+"use client";
+
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const ProductCard = ({ title = "New Arrivals" }) => {
+  const products = [
+    {
+      id: 1,
+      name: "Oranges & Reds Carafe",
+      price: 37.0,
+      image: "/assets/lighting.jpg",
+    },
+    {
+      id: 2,
+      name: "Oranges & Reds Round Jug",
+      price: 48.5,
+      image: "/assets/lanterns.png",
+    },
+    {
+      id: 3,
+      name: "Small Dip Bowl",
+      price: 21.0,
+      image: "/assets/lanterns.png",
+    },
+    {
+      id: 4,
+      name: "Barrel Tumbler",
+      price: 20.5,
+      image: "/assets/lanterns.png",
+    },
+  ];
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: true,
+    responsive: [
+      { breakpoint: 992, settings: { slidesToShow: 2 } },
+      { breakpoint: 576, settings: { slidesToShow: 1 } },
+    ],
+  };
+
+  return (
+    <div className="py-5 bg-white">
+      <div className="container">
+        <h3
+          className="fw-semibold mb-4"
+          style={{ fontFamily: "Quicksand, sans-serif" }}
+        >
+          {title}
+        </h3>
+        <Slider {...settings}>
+          {products.map((product) => (
+            <div key={product.id} className="px-2">
+              <div
+                className="border rounded p-3 d-flex flex-column align-items-center"
+                style={{
+                  height: "100%",
+                  boxShadow: "0 2px 6px rgba(0,0,0,0.05)",
+                  backgroundColor: "rgb(245, 245, 245)",
+                }}
+              >
+                <div
+                  className="bg-white rounded mb-3 d-flex align-items-center justify-content-center"
+                  style={{
+                    width: "100%",
+                    height: "180px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="img-fluid"
+                    style={{
+                      maxHeight: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </div>
+                <div className="text-center w-100">
+                  <h6
+                    className="mb-1"
+                    style={{ fontFamily: "Quicksand, sans-serif" }}
+                  >
+                    {product.name}
+                  </h6>
+                  <hr
+                    className="my-2"
+                    style={{ width: "40px", margin: "auto" }}
+                  />
+                  <p className="text-muted mb-3">€{product.price.toFixed(2)}</p>
+                  <button className="btn btn-outline-secondary w-100">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+
+      {/* Arrow Styling */}
+      <style>
+        {`
+          .slick-prev, .slick-next {
+            width: 30px;
+            height: 30px;
+            z-index: 1;
+          }
+          .slick-prev:before, .slick-next:before {
+            color: #007bff;
+            font-size: 30px;
+          }
+        `}
+      </style>
+    </div>
+  );
+};
+
+export default ProductCard;
