@@ -109,9 +109,7 @@ const ProductCard = ({ title = "New Arrivals" }) => {
       {/* Arrow Styling */}
       <style>
         {`
-        .slick-prev {
-  display: none !important;
-}
+
     .slick-prev, .slick-next {
       width: 30px;
       height: 30px;

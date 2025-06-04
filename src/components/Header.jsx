@@ -6,6 +6,7 @@ import { IoIosSearch } from "react-icons/io";
 import { ShoppingCart, User, Bell } from "lucide-react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
+import ResponsiveNav from "./NavMenu";
 
 const Header = () => {
   const [isBannerVisible, setIsBannerVisible] = useState(true);
@@ -69,7 +70,7 @@ const Header = () => {
       )}
 
       {/* Navigation Links */}
-      <nav className="border-top navContainer">
+      {/* <nav className="border-top navContainer">
         <div className="container">
           <div className={`${isMenuOpen ? "d-block" : "d-none"} d-md-block`}>
             <div className="row navrow">
@@ -90,7 +91,9 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </nav>
+      </nav> */}
+
+      <ResponsiveNav />
 
       {/* Logo + Search + Currency + Signup */}
 
@@ -115,7 +118,7 @@ const Header = () => {
           </div>
 
           {/* Search Field */}
-          <div style={{ display: "flex" }}>
+          <div className="search-bar-row">
             <div className="inputContainer">
               <button
                 className="btn btn-outline-secondary"
@@ -137,7 +140,7 @@ const Header = () => {
 
             {/* Currency & Sign Up */}
 
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex" }} className="mobi-design">
               <div className="d-flex align-items-center justify-content-center justify-content-md-end">
                 <div className="d-flex align-items-center me-3">
                   <Bell
@@ -228,11 +231,11 @@ const Header = () => {
       </div>
 
       {/* Category Navigation */}
-      <div className="category-nav  border-bottom py-2">
+      <div className="category-nav border-bottom py-2 d-none d-md-block">
         <div
           className="container SubnavContainer"
           style={{
-            maxWidth: "1790px  !important",
+            maxWidth: "1790px",
           }}
         >
           <div className="d-flex justify-content-center flex-wrap">
@@ -255,6 +258,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+
       {/* Video Banner Section */}
       {/* <div className="video-banner position-relative text-center">
   <video

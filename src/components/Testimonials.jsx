@@ -41,7 +41,10 @@ const Testimonials = () => {
           <h3 className="mb-4">Loved by Our Customers</h3>
           <div className="row">
             {testimonials.map((t) => (
-              <div className="col-12 col-sm-6 col-md-3 mb-4" key={t.name}>
+              <div
+                className="col-12 col-sm-6 col-md-6 col-lg-3 mb-4"
+                key={t.name}
+              >
                 <div className="h-100">
                   <div className="bg-light testimonials card-body d-flex flex-column justify-content-between">
                     <div>
