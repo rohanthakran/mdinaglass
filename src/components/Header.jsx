@@ -5,7 +5,7 @@ import { FaTimes } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
 import { ShoppingCart, User, Bell } from "lucide-react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { FaPlay } from "react-icons/fa";
+import { FaPlay, FaPause } from "react-icons/fa";
 import ResponsiveNav from "./NavMenu";
 import { CiSearch } from "react-icons/ci";
 
@@ -15,13 +15,18 @@ const Header = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const videoRef = useRef(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
+  const [isHovered, setIsHovered] = useState(false);
+  const [searchVisible, setSearchVisible] = useState(false);
   const slides = [
     {
       type: "video",
       src: "/videos/hero-vdo.mp4",
     },
   ];
+
+  const toggleSearch = () => {
+    setSearchVisible((prev) => !prev);
+  };
 
   const handleNext = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -144,9 +149,6 @@ const Header = () => {
             <div style={{ display: "flex" }} className="mobi-design">
               <div className="d-flex align-items-center justify-content-center justify-content-md-end">
                 <div className="d-flex align-items-center me-3 mobile-cart">
-
-                 
-
                   <Bell
                     className="text-muted me-1"
                     color="#888888"
@@ -154,7 +156,6 @@ const Header = () => {
                       width: "22px",
                       height: "22px",
                       margin: "5px",
-                     
                     }}
                   />
                   <ShoppingCart
@@ -169,73 +170,72 @@ const Header = () => {
                   />
                 </div>
               </div>
-             
-             {/* ========= Desktop Cart ===== */}
-             <div className="desktop-cart">
-              <div className=" align-items-center hide-mobi-cart  justify-content-center justify-content-md-end">
-                <div
-                  style={{
-                    border: "1.2px solid #005E84",
-                    // borderRadius: "5px",
-                    // padding: "5px",
-                    display: "flex",
-                    alignItems: "center",
-                    marginRight: "5px",
-                  }}
-                >
+
+              {/* ========= Desktop Cart ===== */}
+              <div className="desktop-cart">
+                <div className=" align-items-center hide-mobi-cart  justify-content-center justify-content-md-end">
                   <div
                     style={{
-                      backgroundColor: "#005E84",
-                      height: "44px",
-                      width: "33px",
+                      border: "1.2px solid #005E84",
+                      // borderRadius: "5px",
+                      // padding: "5px",
                       display: "flex",
                       alignItems: "center",
-                      justifyContent: "center",
+                      marginRight: "5px",
                     }}
                   >
-                    <img
-                      src="assets/flag.png"
-                      alt="Mdina Glass Logo"
-                      style={{ height: "22px", width: "22px" }}
-                    />
+                    <div
+                      style={{
+                        backgroundColor: "#005E84",
+                        height: "46px",
+                        width: "33px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <img
+                        src="assets/flag.png"
+                        alt="Mdina Glass Logo"
+                        style={{ height: "22px", width: "22px" }}
+                      />
+                    </div>
+
+                    <select
+                      className="form-select me-2 searchContainer"
+                      style={{
+                        width: "80px",
+                        height: "46px",
+                        border: "none",
+                        fontFamily: "'Quicksand', sans-serif",
+                        color: "#005E84",
+                        paddingLeft: "5px",
+                        fontSize: "18px",
+                      }}
+                    >
+                      <option>EUR</option>
+                      <option>USD</option>
+                      <option>GBP</option>
+                    </select>
                   </div>
 
-                  <select
-                    className="form-select me-2 searchContainer"
+                  <button
+                    className="signUp btn "
                     style={{
-                      width: "80px",
-                      height: "46px",
-                      border: "none",
                       fontFamily: "'Quicksand', sans-serif",
-                      color: "#005E84",
-                      paddingLeft: "5px",
-                      fontSize: "18px",
+                      backgroundColor: "#005e84",
+                      color: "#fff",
+                      width: "105px",
+                      height: "46px",
                     }}
                   >
-                    <option>EUR</option>
-                    <option>USD</option>
-                    <option>GBP</option>
-                  </select>
+                    SIGN UP
+                  </button>
                 </div>
-
-                <button
-                  className="signUp btn "
-                  style={{
-                    fontFamily: "'Quicksand', sans-serif",
-                    backgroundColor: "#005e84",
-                    color: "#fff",
-                    width: "105px",
-                    height: "46px",
-                  }}
-                >
-                  SIGN UP
-                </button>
               </div>
-            </div>
-             {/* ========= Mobile Cart ===== */}
-             <div className="mobile-cart">
-              <div className=" align-items-center hide-desk-cart  justify-content-center justify-content-md-end">
-          
+              {/* ========= Mobile Cart ===== */}
+              <div className="mobile-cart">
+                <div className=" align-items-center hide-desk-cart  justify-content-center justify-content-md-end">
                   <select
                     className="form-select me-2 searchContainer"
                     style={{
@@ -246,7 +246,7 @@ const Header = () => {
                       color: "#005E84",
                       paddingLeft: "5px",
                       fontSize: "14px",
-                      padding: "0 !important"
+                      padding: "0 !important",
                     }}
                   >
                     <option>EUR</option>
@@ -254,32 +254,42 @@ const Header = () => {
                     <option>GBP</option>
                   </select>
 
-                <button
-                  className="signUp btn "
-                  style={{
-                    fontFamily: "'Quicksand', sans-serif",
-                    backgroundColor: "#005e84",
-                    color: "#fff",
-                    width: "105px",
-                    height: "46px",
-                  }}
-                >
-                  SIGN UP
-                </button>
-              </div>
-             </div>
-
-              <div className="icon-section">
-               <CiSearch  className="text-muted  hide-desk"
-                    color="#888888"
+                  <button
+                    className="signUp btn "
                     style={{
-                      width: "22px",
-                      height: "22px",
-                      margin: "5px",
-                     
-                    }} />
+                      fontFamily: "'Quicksand', sans-serif",
+                      backgroundColor: "#005e84",
+                      color: "#fff",
+                      width: "105px",
+                      height: "46px",
+                    }}
+                  >
+                    SIGN UP
+                  </button>
+                </div>
+              </div>
 
-                  </div>
+              <div className="icon-section" onClick={toggleSearch}>
+                <CiSearch
+                  className="text-muted  hide-desk"
+                  color="#888888"
+                  style={{
+                    width: "22px",
+                    height: "22px",
+                    margin: "5px",
+                  }}
+                />
+              </div>
+            </div>
+            <div className="search-text">
+              {searchVisible && (
+                <input
+                  type="text"
+                  // className="form-control"
+                  placeholder="Search"
+                  className="inputSubContainer"
+                />
+              )}
             </div>
           </div>
         </div>
@@ -304,7 +314,7 @@ const Header = () => {
               "Legacy (Book)",
               "Gift Vouchers",
               "Sale",
-             
+              "Shop by Ranges",
             ].map((cat) => (
               <a key={cat} href="#" className="nav-link px-2">
                 {cat}
@@ -335,7 +345,17 @@ const Header = () => {
   </button>
 </div> */}
 
-      <div className="position-relative text-center">
+      <div
+        className="position-relative text-center"
+        onMouseEnter={() => {
+          console.log("hovered");
+          setIsHovered(true);
+        }}
+        onMouseLeave={() => {
+          setIsHovered(false);
+          console.log("hovered out");
+        }}
+      >
         {current.type === "video" ? (
           <video
             ref={videoRef}
@@ -365,18 +385,29 @@ const Header = () => {
               height: "95px",
               fontSize: "1.5rem",
               backgroundColor: "#005E84",
+              display: !isVideoPlaying ? "block" : isHovered ? "block" : "none",
             }}
             onClick={togglePlay}
           >
-            <FaPlay
-              style={{
-                width: "34px",
-                height: "50px",
-                color: "#fff",
-                marginLeft: "10px",
-              }}
-            />
-            {/* {isVideoPlaying ? "❚❚" : "▶"} */}
+            {!isVideoPlaying ? (
+              <FaPlay
+                style={{
+                  width: "34px",
+                  height: "50px",
+                  color: "#fff",
+                  marginLeft: "10px",
+                }}
+              />
+            ) : (
+              <FaPause
+                style={{
+                  width: "34px",
+                  height: "50px",
+                  color: "#fff",
+                  // marginLeft: "10px",
+                }}
+              />
+            )}
           </button>
         )}
 

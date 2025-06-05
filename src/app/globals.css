@@ -169,7 +169,18 @@ select option {
 }
 
 /* Custom css*/
+ul.category-sidebar li a {
+  color: #005e84 !important;
+  font-weight: 500;
+  font-size: 18px;
+}
 
+.search-text input {
+  width: 100%;
+  background: #fff;
+  margin-top: 20px;
+  border-radius: 5px;
+}
 @media (min-width: 1800px) {
   .container,
   .container-lg,
@@ -321,7 +332,7 @@ section.custom-categories {
   padding-bottom: 0px !important;
 }
 .container.footer-area img {
-  width: 100% !important;
+  width: auto !important;
 }
 
 .footer-para {
@@ -354,7 +365,16 @@ section.custom-categories {
 .hide-mobi-cart {
   display: flex;
 }
-
+.imageTextVase {
+  text-align: center;
+  font-weight: 400;
+  position: absolute;
+  top: 23%;
+  right: 10%;
+  font-family: var(--font-domine) !important;
+  color: #124e73 !important;
+  font-size: 48px !important;
+}
 @media screen and (max-width: 758px) {
   .search-bar-row {
     display: block;
@@ -432,7 +452,9 @@ section.custom-categories {
   .imageText {
     font-size: 20px !important;
   }
-
+  .imageTextVase {
+    font-size: 20px;
+  }
   .SubnavContainer a {
     font-family: var(--font-quicksand);
     color: #888;
@@ -524,6 +546,10 @@ section.custom-categories {
 }
 
 @media screen and (min-width: 759px) and (max-width: 1000px) {
+  .mobile-header-bg {
+    background: #4444441a;
+    padding-top: 0 !important;
+  }
   .inputSubContainer {
     width: 75%;
   }
@@ -578,7 +604,9 @@ section.custom-categories {
   .imageText {
     font-size: 25px !important;
   }
-
+  .imageTextVase {
+    font-size: 25px !important;
+  }
   section.testimonials-section {
     padding: 25px !important;
   }

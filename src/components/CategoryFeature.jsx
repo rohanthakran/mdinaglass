@@ -11,11 +11,16 @@ const CategoryFeature = () => {
           <div className="col-md-6 col-12 px-0 mt-2">
             <div className="position-relative overflow-hidden rounded shadow-sm">
               <img
-                src="/assets/Mask group.png"
+                src="/assets/new.png"
                 alt="Handcrafted Vases"
                 className="img-fluid w-100 object-cover"
                 style={{ height: "100%" }}
               />
+              <h3 className="imageTextVase">
+                Handcrafted
+                <br />
+                Vases
+              </h3>
             </div>
           </div>
           <div className="col-md-6 col-12 px-0 mt-2">
