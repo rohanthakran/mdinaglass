@@ -18,7 +18,7 @@ const Footer = () => {
             />
             <p className="font-footer">Payment Method</p>
             <div className="d-flex flex-wrap gap-2">
-              <img src="/assets/visa.png" alt="Visa" height="30" />
+              <img src="/assets/visa.png" alt="Visa" height="30" width="100%" />
             </div>
           </div>
 
@@ -89,7 +89,7 @@ const Footer = () => {
         }}
       >
         <div className="container">
-          <p className="mb-2 px-3">
+          <p className="mb-2 px-3 footer-para">
             © 2025 Mdina Glass Malta (XK Holdings). Trading License Number:
             55/1739. All Rights Reserved. VAT registered number MT 1735-2011 EXO
             984. All prices on this website include VAT unless stated. Contracts

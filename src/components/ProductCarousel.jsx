@@ -42,6 +42,7 @@ const ProductCarousel = ({ title = "New Arrivals", showBadge = false }) => {
     slidesToScroll: 1,
     arrows: true,
     responsive: [
+      { breakpoint: 1600, settings: { slidesToShow: 3 } },
       { breakpoint: 992, settings: { slidesToShow: 2 } },
       { breakpoint: 576, settings: { slidesToShow: 1 } },
     ],
@@ -102,6 +103,8 @@ const ProductCarousel = ({ title = "New Arrivals", showBadge = false }) => {
       {/* Carousel Arrow Styling */}
       <style>
         {`
+
+
     .slick-prev, .slick-next {
       width: 30px;
       height: 30px;
@@ -122,6 +125,12 @@ const ProductCarousel = ({ title = "New Arrivals", showBadge = false }) => {
     .slick-next {
       right: 70px;
     }
+
+@media screen and (max-width: 758px) {
+.slick-prev, .slick-next {display:none;}
+
+}
+
   `}
       </style>
     </div>

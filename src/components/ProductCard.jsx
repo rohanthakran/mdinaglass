@@ -41,6 +41,7 @@ const ProductCard = ({ title = "New Arrivals" }) => {
     slidesToScroll: 1,
     arrows: true,
     responsive: [
+       { breakpoint: 1600, settings: { slidesToShow: 3 } },
       { breakpoint: 992, settings: { slidesToShow: 2 } },
       { breakpoint: 576, settings: { slidesToShow: 1 } },
     ],
@@ -96,9 +97,11 @@ const ProductCard = ({ title = "New Arrivals" }) => {
                     style={{ width: "40px", margin: "auto" }}
                   />
                   <p className="text-muted mb-3">€{product.price.toFixed(2)}</p>
-                  <button className="btn btn-outline-secondary w-100">
+                  <div className="new-arrival-design">
+                  <button className="btn btn-outline-secondary  w-100">
                     Add to Cart
                   </button>
+                </div>
                 </div>
               </div>
             </div>

@@ -7,6 +7,7 @@ import { ShoppingCart, User, Bell } from "lucide-react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
 import ResponsiveNav from "./NavMenu";
+import { CiSearch } from "react-icons/ci";
 
 const Header = () => {
   const [isBannerVisible, setIsBannerVisible] = useState(true);
@@ -103,13 +104,13 @@ const Header = () => {
         }}
       >
         <div
-          className="container py-3 d-flex flex-column flex-md-row align-items-center justify-content-between"
+          className="container mobile-header-bg py-3 d-flex flex-column flex-md-row align-items-center justify-content-between"
           style={{
             maxWidth: "1700px !important",
           }}
         >
           {/* Logo */}
-          <div className="mb-3 mb-md-0">
+          <div className="mb-3 mb-md-0 mobi-logo">
             <img
               src="assets/logo.png"
               alt="Mdina Glass Logo"
@@ -142,31 +143,36 @@ const Header = () => {
 
             <div style={{ display: "flex" }} className="mobi-design">
               <div className="d-flex align-items-center justify-content-center justify-content-md-end">
-                <div className="d-flex align-items-center me-3">
+                <div className="d-flex align-items-center me-3 mobile-cart">
+
+                 
+
                   <Bell
-                    className="text-muted me-3"
+                    className="text-muted me-1"
                     color="#888888"
                     style={{
                       width: "22px",
                       height: "22px",
-                      margin: "10px",
-                      marginLeft: "36px",
+                      margin: "5px",
+                     
                     }}
                   />
                   <ShoppingCart
                     color="#888888"
-                    className="text-muted me-2"
-                    style={{ width: "22px", height: "22px", margin: "10px" }}
+                    className="text-muted"
+                    style={{ width: "22px", height: "22px", margin: "5px" }}
                   />
                   <User
                     color="#888888"
-                    className="text-muted me-3"
-                    style={{ width: "22px", height: "22px", margin: "10px" }}
+                    className="text-muted "
+                    style={{ width: "22px", height: "22px", margin: "5px" }}
                   />
                 </div>
               </div>
-
-              <div className="d-flex align-items-center justify-content-center justify-content-md-end">
+             
+             {/* ========= Desktop Cart ===== */}
+             <div className="desktop-cart">
+              <div className=" align-items-center hide-mobi-cart  justify-content-center justify-content-md-end">
                 <div
                   style={{
                     border: "1.2px solid #005E84",
@@ -226,12 +232,61 @@ const Header = () => {
                 </button>
               </div>
             </div>
+             {/* ========= Mobile Cart ===== */}
+             <div className="mobile-cart">
+              <div className=" align-items-center hide-desk-cart  justify-content-center justify-content-md-end">
+          
+                  <select
+                    className="form-select me-2 searchContainer"
+                    style={{
+                      width: "118px",
+                      // height: "46px",
+                      border: "none",
+                      fontFamily: "'Quicksand', sans-serif",
+                      color: "#005E84",
+                      paddingLeft: "5px",
+                      fontSize: "14px",
+                      padding: "0 !important"
+                    }}
+                  >
+                    <option>EUR</option>
+                    <option>USD</option>
+                    <option>GBP</option>
+                  </select>
+
+                <button
+                  className="signUp btn "
+                  style={{
+                    fontFamily: "'Quicksand', sans-serif",
+                    backgroundColor: "#005e84",
+                    color: "#fff",
+                    width: "105px",
+                    height: "46px",
+                  }}
+                >
+                  SIGN UP
+                </button>
+              </div>
+             </div>
+
+              <div className="icon-section">
+               <CiSearch  className="text-muted  hide-desk"
+                    color="#888888"
+                    style={{
+                      width: "22px",
+                      height: "22px",
+                      margin: "5px",
+                     
+                    }} />
+
+                  </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Category Navigation */}
-      <div className="category-nav border-bottom py-2 d-none d-md-block">
+      <div className="category-nav border-bottom py-2 d-none d-md-none d-lg-block">
         <div
           className="container SubnavContainer"
           style={{
@@ -249,7 +304,7 @@ const Header = () => {
               "Legacy (Book)",
               "Gift Vouchers",
               "Sale",
-              "Shop by Ranges",
+             
             ].map((cat) => (
               <a key={cat} href="#" className="nav-link px-2">
                 {cat}

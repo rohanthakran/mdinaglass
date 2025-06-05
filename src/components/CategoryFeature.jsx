@@ -8,7 +8,7 @@ const CategoryFeature = () => {
     <section className="feature-images">
       <div className="container">
         <div className="row">
-          <div className="col-md-6 col-12 px-0">
+          <div className="col-md-6 col-12 px-0 mt-2">
             <div className="position-relative overflow-hidden rounded shadow-sm">
               <img
                 src="/assets/Mask group.png"
@@ -18,7 +18,7 @@ const CategoryFeature = () => {
               />
             </div>
           </div>
-          <div className="col-md-6 col-12 px-0">
+          <div className="col-md-6 col-12 px-0 mt-2">
             <div className="position-relative overflow-hidden rounded shadow-sm">
               <img
                 src="/assets/sculpture.png"

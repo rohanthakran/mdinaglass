@@ -48,7 +48,7 @@ const CategoryGrid = () => {
                 <div
                   className="font-custom-category position-absolute bottom-5 start-50 translate-middle text-white  text-center px-2"
                   style={{
-                    textShadow: "1px 1px 6px rgba(0,0,0,0.7)",
+                    textShadow: "0em 0.1em 0.1em #FFFFFFAD)",
 
                     width: "100%",
                   }}
